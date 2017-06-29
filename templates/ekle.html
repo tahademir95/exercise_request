@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function validate() {
+            var n = document.forms["myform"]["no"].value;
+            var m = document.forms["myform"]["deyer"].value;
+            var reg = new RegExp('^[0-9]+$');
+
+            if (n.length < 3 || n.length > 10) {
+                alert("uzunluk 3 ile 10 arssında olmalı");
+                return false;
+            }
+            var isnum = reg.test(m)
+            if (!isnum) {
+                alert("lütfen lanet javascripti bidaha kullanmayın.");
+                return false;
+            }
+            document.forms["myform"].submit();
+
+
+        }
+
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{ da }}
+<form onsubmit="return validate();" id="myform" method="post" action="ekle">
+    <input type="text" name="no"/>
+    <input type="text" name="deyer"/>
+    <input type="submit" value="gonder"/>
+    {% csrf_token %}
+
+</form>
+
+</body>
+</html>

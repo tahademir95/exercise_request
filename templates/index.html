@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  method="post" action="/all/ekle">{% csrf_token %}
+    <input type="text" name="ad">isim</input>
+        <input type="text" name="soyad">soyad</input>
+<input type="submit" value="send">
+
+</form>
+
+
+</body>
+</html>
